@@ -1,0 +1,22 @@
+# wrangler.toml - Cloudflare Worker Configuration
+
+name = "terabox-proxy"
+main = "worker.js"
+compatibility_date = "2024-12-18"
+
+# Environment variables (optional)
+[vars]
+TARGET_API = "https://teraplayer-xfwi.onrender.com/api/preview"
+
+# CORS settings (handled in the worker code)
+# No additional CORS configuration needed
+
+# Logging
+[observability]
+logs = { enabled = true, tail = true }
+
+# Uncomment if you need D1 database or other bindings
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "your-database"
+# database_id = "your-database-id"
